@@ -1,0 +1,57 @@
+﻿@model ProyectoCrud.Models.Contacto
+
+@{
+    ViewBag.Title = "Actualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row " style="margin-top:30px">
+
+    <div class="col-sm-12 card">
+
+        <div class="card-header bg-warning">
+            <h4 class="p-3">Editar contacto</h4>
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <form action="@Url.Action("Actualizar","Contacto")" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Id</label>
+                        <input type="text" class="form-control" name="IdContacto" value="@Html.DisplayFor(x => x.IdContacto)" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nombres</label>
+                        <input type="text" class="form-control" name="Nombres" value="@Html.DisplayFor(x => x.Nombres)" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" name="Apellidos" value="@Model.Apellidos" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Telefono</label>
+                        <input type="text" class="form-control" name="Telefono" value="@Model.Telefono" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo</label>
+                        <input type="text" class="form-control" name="Correo" value="@Model.Correo" />
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a href=@Url.Action("Inicio", "Contacto") class="btn btn-success">Volver</a>
+                    </div>
+                </form>
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    El contacto no existe o no pudo ser cargado.
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
