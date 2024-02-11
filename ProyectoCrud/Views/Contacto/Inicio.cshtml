@@ -36,7 +36,7 @@
                                 <td>@contacto.Correo</td>
                                 <td>
                                     <a href="@Url.Action("Actualizar","Contacto", new {id=@contacto.IdContacto})" class="btn btn-primary btn-sm">Editar</a>
-                                    <a class="btn btn-danger btn-sm">Eliminar</a>
+                                    <a href="@Url.Action("Delete","Contacto", new {id=@contacto.IdContacto})"  class="btn btn-danger btn-sm">Eliminar</a>
                                 </td>
                             </tr>
                         }                                                  

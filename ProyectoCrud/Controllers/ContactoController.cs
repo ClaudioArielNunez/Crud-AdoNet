@@ -114,5 +114,31 @@ namespace ProyectoCrud.Controllers
 
                 return RedirectToAction("Inicio");
         }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null) return RedirectToAction("Inicio");
+
+            Contacto contacto = olista.FirstOrDefault(x => x.IdContacto == id);
+
+            return View(contacto);
+        }
+
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            using (SqlConnection oconexion = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("SP_Eliminar", oconexion);
+                cmd.Parameters.AddWithValue("@IdContacto", id);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                oconexion.Open();
+                cmd.ExecuteNonQuery();
+            }
+                return RedirectToAction("Inicio");
+        }
     }
 }

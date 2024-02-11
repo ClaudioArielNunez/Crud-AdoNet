@@ -18,8 +18,9 @@
             {
                 <form action="@Url.Action("Actualizar","Contacto")" method="post">
                     <div class="mb-3">
+                        @*importante el tag name igual a la propiedad*@
                         <label class="form-label">Id</label>
-                        <input type="text" class="form-control" name="IdContacto" value="@Html.DisplayFor(x => x.IdContacto)" />
+                        <input type="text" readonly class="form-control" name="IdContacto" value="@Html.DisplayFor(x => x.IdContacto)" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Nombres</label>

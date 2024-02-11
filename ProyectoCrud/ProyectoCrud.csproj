@@ -178,6 +178,7 @@
     <Content Include="Views\Contacto\Inicio.cshtml" />
     <Content Include="Views\Contacto\Registrar.cshtml" />
     <Content Include="Views\Contacto\Actualizar.cshtml" />
+    <Content Include="Views\Contacto\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

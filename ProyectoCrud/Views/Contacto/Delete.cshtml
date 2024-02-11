@@ -1,0 +1,27 @@
+﻿@model ProyectoCrud.Models.Contacto
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-12 card">
+
+    <div class="card-header bg-warning">
+        <h4 class="p-3">Eliminar contacto</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-danger">
+            ¿ Desea eliminar al contacto: @Model.Nombres @Model.Apellidos ?
+        </div>
+        <form action="@Url.Action("Delete","Contacto")" method="post">
+            @*importante el tag name*@
+            <input type="hidden" value="@Model.IdContacto" name="id" />
+            <div class="mb-3">
+                <button type="submit" class="btn btn-danger">Confirma Borrado</button>
+                <a href=@Url.Action("Inicio", "Contacto") class="btn btn-success">Volver</a>
+            </div>
+        </form>
+    </div>
+
+</div>
